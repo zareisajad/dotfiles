@@ -128,9 +128,11 @@ alias update="sudo pacman -Syu"
 alias e="exit"
 alias t="tmux"
 alias publish-blog="~/code/blog/publish-blog.sh"
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias dtf="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias bootstrap="$HOME/.dotfiles/scripts/bootstrap.sh"
-alias dotfiles-push='dotfiles add -A && dotfiles commit -m "Update dotfiles" && dotfiles push'
+alias dtfpush='dtf add -f ~/.zshrc ~/.config/i3 ~/.config/nvim && \
+dtf commit -m "update dotfiles" && \
+dtf push'
 
 play() {
     mpg123 ~/Music/**/"$@"
