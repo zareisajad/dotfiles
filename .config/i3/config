@@ -111,6 +111,7 @@ exec --no-startup-id numlockx on
 
 # NOTIFICATIONS
 exec --no-startup-id dunst
+bindsym $mod+m+minus exec --no-startup-id amixer set Capture 5%-
 
 # Volume and media control
 bindsym $mod+equal exec --no-startup-id pamixer --increase 5
@@ -131,6 +132,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && ddcu
 exec_always --no-startup-id ~/.config/i3/scripts/launch-polybar
 exec --no-startup-id i3-msg 'exec konsole'
 exec --no-startup-id i3-msg 'exec ~/Downloads/oblivion-desktop-linux-x64/oblivion-desktop'
+
+for_window [class="vokoscreenNG"] sticky enable
 
 
 mode "resize" {
