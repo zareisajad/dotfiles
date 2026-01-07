@@ -16,10 +16,10 @@ alias dr="python manage.py runserver"
 alias dmm="python manage.py makemigrations"
 alias dm="python manage.py migrate"
 alias radio="mpg123 --shuffle ~/Music/**/*.mp3"
-alias playem="mpg123 --shuffle ~/Music/em/*.mp3"
 alias vim="nvim"
 alias v="nvim"
 alias code="~/code/"
+alias blog="~/code/blog/"
 alias install="sudo pacman -S"
 alias update="sudo pacman -Syu"
 alias e="exit"
@@ -30,7 +30,7 @@ alias bootstrap="$HOME/.dotfiles/scripts/bootstrap.sh"
 alias dtfpush='dtf add -f ~/.zshrc ~/.config/i3 ~/.config/nvim && dtf commit -m "update dotfiles" && dtf push'
 
 play() {
-    mpg123 ~/Music/**/"$@"
+    mpg123 --loop -1 ~/Music/**/"$@"
 }
 
 chpwd() {
