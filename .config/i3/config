@@ -77,7 +77,7 @@ floating_modifier $mod
 bindsym $mod+Shift+space floating toggle
 
 bindsym $mod+Return exec konsole
-bindsym $mod+Shift+o workspace 3; exec obsidian 
+bindsym $mod+Shift+o workspace 1; exec obsidian 
 bindsym $mod+Shift+w exec firefox -p np
 bindsym $mod+q kill
 bindsym $mod+Shift+r restart
@@ -130,7 +130,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && ddcu
 
 # auto start
 exec_always --no-startup-id ~/.config/i3/scripts/launch-polybar
-exec --no-startup-id i3-msg 'workspace 3; exec obsidian'
+exec --no-startup-id i3-msg 'workspace 1; exec obsidian'
 exec --no-startup-id i3-msg 'exec ~/Downloads/oblivion-desktop-linux-x64/oblivion-desktop'
 
 for_window [class="vokoscreenNG"] sticky enable
