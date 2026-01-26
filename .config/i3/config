@@ -4,8 +4,6 @@ set $mod Mod4
 default_border pixel -1
 default_floating_border pixel 0
 
-gaps inner 6
-gaps outer 3
 
 set $ws1 "1"
 set $ws2 "2" 
@@ -30,6 +28,8 @@ workspace 5 output eDP-1
 workspace 1 output HDMI-2
 workspace 2 output HDMI-2
 workspace 3 output HDMI-2
+
+assign [class="obsidian"] 1
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -129,12 +129,11 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5% && ddcuti
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && ddcutil setvcp 10 - 10
 
 # auto start
-exec_always --no-startup-id ~/.config/i3/scripts/launch-polybar
+# exec_always --no-startup-id ~/.config/i3/scripts/launch-polybar
 exec --no-startup-id i3-msg 'workspace 1; exec obsidian'
 exec --no-startup-id i3-msg 'exec ~/Downloads/oblivion-desktop-linux-x64/oblivion-desktop'
 
 for_window [class="vokoscreenNG"] sticky enable
-
 
 mode "resize" {
     bindsym h resize shrink width 10 px or 10 ppt
@@ -144,4 +143,8 @@ mode "resize" {
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
+}
+
+bar {
+    status_command i3status
 }

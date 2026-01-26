@@ -27,7 +27,7 @@ alias t="tmux"
 alias publish-blog="~/code/blog/publish-blog.sh"
 alias dtf="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias bootstrap="$HOME/.dotfiles/scripts/bootstrap.sh"
-alias dtfpush='dtf add -f ~/.dotfiles/scripts/bootstrap.sh  ~/.zshrc ~/.config/i3 ~/.config/nvim && dtf commit -m "update dotfiles" && dtf push'
+alias dtfpush='dtf add -f ~/.dotfiles/scripts/bootstrap.sh  ~/.zshrc ~/.config/i3 ~/.config/picom.conf ~/.config/nvimm  && dtf commit -m "update dotfiles" && dtf push'
 
 play() {
     mpg123 --loop -1 ~/Music/**/"$@"
