@@ -77,6 +77,7 @@ floating_modifier $mod
 bindsym $mod+Shift+space floating toggle
 
 bindsym $mod+Return exec konsole
+bindsym $mod+Shift+p exec firefox -p new
 bindsym $mod+Shift+o workspace 1; exec obsidian 
 bindsym $mod+Shift+w exec firefox -p np
 bindsym $mod+q kill
@@ -97,14 +98,13 @@ bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard
 exec_always --no-startup-id setxkbmap -layout us,ir -option grp:alt_shift_toggle
 
 # DISPLAY
-exec --no-startup-id xrandr --output HDMI-2 --auto --above eDP-1
+exec --no-startup-id xrandr --output HDMI-2 --mode 1920x1080 --rate 75 --right-of eDP-1 --output DP-1 --mode 1366x768 --rate 60 --right-of HDMI-2 --rotate right
 
 # COMPOSITOR (NO TEARING)
 exec --no-startup-id picom -b --backend glx --vsync
 
 # WALLPAPER
 exec --no-startup-id feh --bg-fill ~/Pictures/back.jpg
-
 # POWER MANAGEMENT
 exec --no-startup-id xset s 480 dpms 600 600 600
 exec --no-startup-id numlockx on
@@ -146,5 +146,7 @@ mode "resize" {
 }
 
 bar {
+    output eDP-1
     status_command i3status
+
 }
